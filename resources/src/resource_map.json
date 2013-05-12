@@ -1,0 +1,15 @@
+
+{"friendlyVersion": "1.0",
+ "versionDefName": "TACHYMETER_RESOURCES",
+ "media": [
+     {"type":"font",
+      "defName":"FONT_OSP_DIN_48",
+      "file":"fonts/OSP-DIN_48.ttf"},
+     {"type":"font",
+      "defName":"FONT_OSP_DIN_26",
+      "file":"fonts/OSP-DIN_26.ttf"},
+     {"type":"png",
+      "defName":"MENU_ICON",
+      "file":"menu_icon_tachy.png"}
+	  ]
+}
