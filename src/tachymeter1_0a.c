@@ -22,7 +22,7 @@ int _previousInterval = -1;
 int _differenceAccumulator = 0;
 int _differenceCount = 0;
 
-int _mode = 0; //stopwatch to start.
+short _mode = 0; //stopwatch to start.
 bool _wantkph = false;
 
 TextLayer _hundredths_txt;
@@ -525,6 +525,9 @@ void down_click_handler(ClickRecognizerRef recognizer, Window *window) {
             case 2: //kph
                 text_layer_set_text(&_bot_txt,"mark");
                 break;
+            default:
+                text_layer_set_text(&_bot_txt,"never!");
+                break;
         }
 
         animation_unschedule(&_millisecond_anim);
@@ -677,6 +680,22 @@ void handle_init(AppContextRef ctx) {
 
 
 void pbl_main(void *params) {
+    
+    _debug_mode = false;
+    _debug_update_count =0;
+    _timingInProgress = false;
+    _currentMilliseconds = 0;
+    _previousMilliseconds = 0;
+    _previousInterval = -1;
+    _differenceAccumulator = 0;
+    _differenceCount = 0;
+    
+    _mode = 0; 
+    _wantkph = false;
+
+    _lapcounter = 0;
+    _lapaccumulator = 0;
+
   PebbleAppHandlers handlers = {
     .init_handler = &handle_init,
     .timer_handler = &handle_timer,
